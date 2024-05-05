@@ -310,6 +310,8 @@ GameObject:
   - component: {fileID: 1748164182}
   - component: {fileID: 1748164181}
   - component: {fileID: 1748164180}
+  - component: {fileID: 1748164184}
+  - component: {fileID: 1748164183}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -332,7 +334,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 6200000, guid: cefb69c074897ee4183607a2d4157e39, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -340,7 +342,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -405,6 +407,47 @@ Transform:
   - {fileID: 1765377998}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1748164183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748164179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fd56bc894f6d7e418c718ce2a2899eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputController: {fileID: 11400000, guid: c989785cea8202c4cbb1aa7eec4de26e, type: 2}
+  maxSpeed: 4
+  maxAcceleration: 35
+  maxAirAcceleration: 20
+  direction: {x: 0, y: 0}
+  desiredVelocity: {x: 0, y: 0}
+  currentVelocity: {x: 0, y: 0}
+  collisionCheck: {fileID: 0}
+  maxSpeedChange: 0
+  acceleration: 0
+  onGround: 0
+--- !u!114 &1748164184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748164179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9ae0a74730be57488e7aae02b181c14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ContactNormal1: {x: 0, y: 0}
+  ContactNormal2: {x: 0, y: 0}
+  ContactPoint1: {x: 0, y: 0}
+  ContactPoint2: {x: 0, y: 0}
+  normal2: []
+  contact: []
 --- !u!1 &1765377997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,7 +1127,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: cefb69c074897ee4183607a2d4157e39, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
