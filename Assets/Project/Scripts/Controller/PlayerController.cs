@@ -4,21 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[CreateAssetMenu(fileName ="PlayerController", menuName ="InputController/PlayerController")]
+[CreateAssetMenu(fileName = "PlayerController", menuName = "InputController/PlayerController")]
 public class PlayerController : InputController
 {
   public PlayerInputAction playerInputAction;
   public bool isJumping;
   public Vector2 moviment;
 
-  private void OnEnable() 
+  private void OnEnable()
   {
     Debug.Log("OnEnable");
     playerInputAction = new PlayerInputAction();
-    playerInputAction.Gameplay.Enable();    
+    playerInputAction.Gameplay.Enable();
   }
 
-  private void OnDisable() {  
+  private void OnDisable()
+  {
     Debug.Log("OnDisable");
     playerInputAction.Gameplay.Disable();
     playerInputAction = null;
@@ -26,12 +27,14 @@ public class PlayerController : InputController
 
   public override bool JumpInput()
   {
-    throw new System.NotImplementedException();
+    // throw new System.NotImplementedException();
+    Debug.LogFormat("JumpInput: [{0}] ", isJumping);
+    return Input.GetButton("Jump");
   }
 
   public override float MovimentInput()
   {
-    moviment = playerInputAction.Gameplay.Moviment.ReadValue<Vector2>();    
+    moviment = playerInputAction.Gameplay.Moviment.ReadValue<Vector2>();
     return playerInputAction.Gameplay.Moviment.ReadValue<Vector2>().x;
   }
 
@@ -65,5 +68,5 @@ public class PlayerController : InputController
   //   isJumping = true;
   // }
 
- 
+
 }
