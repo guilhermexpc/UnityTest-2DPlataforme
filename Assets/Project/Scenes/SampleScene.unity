@@ -312,6 +312,7 @@ GameObject:
   - component: {fileID: 1748164180}
   - component: {fileID: 1748164184}
   - component: {fileID: 1748164183}
+  - component: {fileID: 1748164185}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -428,6 +429,8 @@ MonoBehaviour:
   currentVelocity: {x: 0, y: 0}
   collisionCheck: {fileID: 0}
   maxSpeedChange: 0
+  fixedDeltaTimer: 0
+  deltaTimer: 0
   acceleration: 0
   onGround: 0
 --- !u!114 &1748164184
@@ -448,6 +451,28 @@ MonoBehaviour:
   ContactPoint2: {x: 0, y: 0}
   normal2: []
   contact: []
+--- !u!114 &1748164185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748164179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5387eb7716ba3ea40875409a1cc3d2dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputController: {fileID: 11400000, guid: c989785cea8202c4cbb1aa7eec4de26e, type: 2}
+  jumpHeight: 3
+  maxAirjump: 0
+  downwardMovimentMultiplier: 3
+  upwardMovimentMultiplier: 1.7
+  velocity: {x: 0, y: 0}
+  onGround: 0
+  desiredJump: 0
+  isJumping: 0
+  isJumpReset: 0
 --- !u!1 &1765377997
 GameObject:
   m_ObjectHideFlags: 0
